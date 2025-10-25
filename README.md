@@ -63,10 +63,10 @@
 ```mysqldump --single-transaction --master-data=2 -u root -p my_db > full.sql```
 
 Затем сохраняем binary log файлы (mysql-bin.000001, и т.д.).
-Для восстановления:
+Для восстановления
 
-```mysql -u root -p my_db < full.sql 
-mysqlbinlog mysql-bin.000002 | mysql -u root -p```
+```mysql -u root -p my_db < full.sql mysqlbinlog mysql-bin.000002 | mysql -u root -p```
+
 
 Альтернатива — Percona XtraBackup, который поддерживает true инкрементные бэкапы на уровне InnoDB.
 
